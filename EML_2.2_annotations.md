@@ -19,10 +19,8 @@ then datasets about "carbon dioxide flux" can also be returned because "carbon d
 considered a type of "carbon flux". 
 
 EML 2.2 will have the capacity to add semantic statements, as annotations to datasets. 
-Here, we describe those features briefly and give examples of two common annotations. 
-It is important to keep in mind that **Semantic statements are not simply a set of loosely structured keywords; 
-they must be logically consistent**. Inconsistent annotations could have dreadful consequences. 
-The EML development committee is creating a Semantic Primer, that will be released along with other
+Here, we describe those features briefly and give examples of two common annotations - at the dataset-level
+and attribute-level. The EML development committee is creating a Semantic Primer, that will be released along with other
 EML 2.2 documentataion.
 
 
@@ -34,14 +32,15 @@ a **subject**, an **predicate** (sometimes called object property or data proper
 ```
 These components are analogous to parts of a sentence; the **subject** 
 and **object** can be thought of as nouns in the sentence and the **predicate** 
-is akin to a verb or relationship that connects the **subject** and **object**. The semantic triple 
-expresses the statement about the associated resource. After processing the EML into a semantic web format, 
+is akin to a verb or relationship that connects the **subject** and **object**. 
+The semantic triple  expresses the statement about the associated resource. 
+After processing the EML into a semantic web format, 
 such as RDF/XML, the semantic statement becomes interpretable by machines. 
 
 RDF is *not* designed to be displayed to people. It is designed so that components are accessible 
 through the Web, for computers to look up precise definitions and relationships between these resources 
-and other concepts. The three components of a semantic triple should be HTTP URIs (uniform resource 
-identifiers), which are 
+and other concepts. To simplfy their use, the three components of a semantic triple should be 
+HTTP URIs (uniform resource identifiers), which are 
 
 - globally unique and persistent (unchanging), and
 - resolvable or dereferenceable
@@ -49,13 +48,14 @@ identifiers), which are
 
 The simplest 
 triple statement is a sequence of (subject, predicate, object) terms, separated by whitespace and 
-terminated by '.' (W3C ref). Example 1 expresses the relationship between Spiderman and the Green Goblin, with fake URIs:
+terminated by '.' (W3C ref). Below is the sematic statement for the relationship between Spiderman and the 
+Green Goblin, with fictional URIs:
 
 ```
 <http://example.org/#spiderman> <http://example.org/#enemyOf> <http://example.org/#green-goblin> .
 ```
 
-Example 2 is a true triple created for a Jornada LTER dataset. The URIs resolve, saying that a 
+Below is a true triple created for a Jornada LTER dataset. The URIs resolve, to say that a 
 dataset (subject) was "located in" (predicate/property) a "desert area" (object/value). The subject 
 dereferences to a dataset in PASTA, knb-lter-jrn.210327001.1, the predicate to a relationship ontology, 
 and the object to a concept in the Environment Ontology, which contains a complex definition and 
@@ -65,9 +65,9 @@ cross references for “desert area”.
 <https://doi.org/10.6073/pasta/06db7b16fe62bcce4c43fd9ddbe43575> <http://purl.obolibrary.org/obo/RO_0001025> <http://purl.obolibrary.org/obo/ENVO_00000097> .
 ```
 
-The “located in” relationship means that more precise searches can be constructed, e.g. a computer can return this 
-dataset alongside other datasets that are "located in" a precisely defined area called a "desert" -- not just related 
-to deserts in some unknown way, which is all that is possible with keywords. 
+The “located in” relationship means that more precise searches can be constructed, e.g. a computer can 
+return this dataset alongside other datasets that are "located in" a precisely defined area called a 
+"desert" -- not just related to deserts in some unknown way, which is all that is possible with keywords. 
 
 ## Semantic Annotations in EML 2.2.0
 In **EML 2.2.0** there are 5 places where annotation elements can appear in an EML document: 
@@ -80,7 +80,7 @@ In **EML 2.2.0** there are 5 places where annotation elements can appear in an E
 
 ### Annotation element structure
 All annotation nodes are defined as an XML type, so they have the same structure anywhere they appear
-in the EML record. Here is the basic structure. Sections below have more examples.
+in the EML record. Here is the basic structure. Specific examples are below.
 
 ```xml
     <annotation>
@@ -90,18 +90,15 @@ in the EML record. Here is the basic structure. Sections below have more example
 ```
 
 #### Annotations map to semantic triples
-
-```
-[subject] [predicate] [object]
-```
+The EML annotation is used to create semantic triples. The tables shows how the triple components 
+`subject`, `predicate`, and `object`
+map to EML annotations using the JRN statement above. 
 
 |Triple component|EML location |Note  |Example  |
 |--|--|--|--|
-| `subject` |Parent element of the annotation  |  An element meant to be a subject must have an `id` attribute | `https://example.org/datasets/{dataset-identifier}#element-id` |
-| `predicate` | `//annotation/propoertyURI`  | the "verb" in a statement | see below  |
-| `object` | `//annotation/valueURI` | "object" of the "verb"  | see below |
-
-
+| `subject` |Parent element of the annotation  |  An element meant to be a subject must have an `id` attribute | https://doi.org/10.6073/pasta/06db7b16fe62bcce4c43fd9ddbe43575 |
+| `predicate` | `//annotation/propoertyURI`  | the "verb" in a statement | http://purl.obolibrary.org/obo/RO_0001025  |
+| `object` | `//annotation/valueURI` | "object" of the "verb"  | http://purl.obolibrary.org/obo/ENVO_00000097 |
 
 **When are IDs required?**
 Annotations at the dataset, entity or attribute level presume that the parent element is the *subject*; hence, if an element has
@@ -208,7 +205,11 @@ Taken together, the semantic statement indicates that "the attribute with the id
 
 # Conclusion
 Remind them about the primer again. that it will have way more examples
-also will be some RDF material for reference, if you are interested.
+also will be some RDF material for reference if you are interested.
+
+It is important to keep in mind that **Semantic statements are not simply a set of loosely structured keywords; 
+they must be logically consistent**. Inconsistent annotations could have dreadful consequences. 
+so the primer will also will have examples of how things can go wrong, of course hoping not to scare anyone. 
 
  something about 
  **Responsibilities of a data manager/EML constructor** to 

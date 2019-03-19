@@ -1,7 +1,7 @@
 # Semantic Annotations in EML 2.2
+O’Brien, Chong, Schildhauer 
 
-## O’Brien, Chong, Schildhauer 
-## Databits 2019 Spring
+Databits 2019 Spring
 
 # Introduction
 
@@ -51,7 +51,6 @@ The simplest
 triple statement is a sequence of (subject, predicate, object) terms, separated by whitespace and 
 terminated by '.' (W3C ref). Example 1 expresses the relationship between Spiderman and the Green Goblin, with fake URIs:
 
-Example 1
 ```
 <http://example.org/#spiderman> <http://example.org/#enemyOf> <http://example.org/#green-goblin> .
 ```
@@ -62,7 +61,6 @@ dereferences to a dataset in PASTA, knb-lter-jrn.210327001.1, the predicate to a
 and the object to a concept in the Environment Ontology, which contains a complex definition and 
 cross references for “desert area”. 
 
-Example 2
 ```
 <https://doi.org/10.6073/pasta/06db7b16fe62bcce4c43fd9ddbe43575> <http://purl.obolibrary.org/obo/RO_0001025> <http://purl.obolibrary.org/obo/ENVO_00000097> .
 ```
@@ -119,7 +117,7 @@ The EML-2.2 parser checks for an `id` attribute if an annotation is present.
 
 
 
-### Example -  Resource level (Top-level) annotations: `dataset`
+### Resource level (top-level) annotations: `dataset`
 
 The top-level resources in EML are `dataset`, `literature`, `protocol`, and `software`, and
 any of them can be annotated. This example is for a dataset. **A top-level annotation applies 
@@ -169,7 +167,7 @@ Taken together, the semantic statement can be translated to "the dataset is abou
 
 
 
-## Example 2 - Attribute-level annotations:  `attribute` 
+## Attribute-level annotations: `attribute` 
 
 An attribute annotation applies to a data entity attribute, such as a column name in a spreadsheet or table. 
 It associates precise measurement semantics such as the property or "thing" being measured, the measurement standard for 
@@ -208,70 +206,30 @@ Taken together, the semantic statement indicates that "the attribute with the id
 ```
 
 
+# Conclusion
+Remind them about the primer again. that it will have way more examples
+also will be some RDF material for reference, if you are interested.
+
+ something about 
+ **Responsibilities of a data manager/EML constructor** to 
+ understand the concepts in the ontologies chosen by your community,
+ understand the concepts in the datasets you manage
+
+ vs **Responsibilities of a repository (or another search-systems)**
+ to understand the implied subject and create the RDF triples when needed.
+ provide mechanisms to take advantage of structures in the onts chosen by their communities, 
+ provide technical guidance to their communities as they choices onts and other vocabs.
+
+
+
+
 
 # References
-Lorem ipsum
+
 
 learn more: https://www.w3.org/TR/rdf11-primer/). 
 
 Ref for example spiderman https://www.w3.org/TR/turtle/
 
-
-
-
-
-## parking area, and other garbage
-
-Continuing with the JRN example, the annotation in EML looks like Example 3. 
-
-Example 3 
-
-```
-<dataset id="dataset-01">
-    <title>Greenfall litter decomposition of three common species in the northern Chihuahuan Desert, 2010-2012</title>
-    <creator>
-        <individualName>
-            <givenName>Jane</givenName>
-            <givenName>G.</givenName>
-            <surName>Smith</surName>
-        </individualName>
-        <organizationName>NMSU</organizationName>
-        <electronicMailAddress>jane.g.smith@Colorado.EDU</electronicMailAddress>
-    </creator>
-    <pubDate>2018-10-11</pubDate>
-    ...    
-    <coverage> 
-        ...
-    </coverage>    
-    <annotation>
-        <propertyURI label="located in">http://purl.obolibrary.org/obo/RO_0001025</propertyURI>
-        <valueURI label="desert area">http://purl.obolibrary.org/obo/ENVO_00000097</valueURI>
-    </annotation>
-    ...    
-</dataset>  
-```
-
-
-
-
-## Responsibilities of a data manager
-1. understand the concepts in the ontologies chosen by your community
-1. understand the concepts in the datasets you manage
-1. 
-
-## Responsibilities of a repository
-
-
-
-
-# EML Annotations to Semantic Triples
-The subjects of triples generated from EML annotations will be HTTP URI's that identify the parent element of 
-the annotation, in the case of Example 3, the dataset itself. It will be the responsibility of the repository 
-(or another system) to understand the implied subject and create the RDF triples (including the subjects).
-
-The simplest display of the annotation metadata (e.g., by the EDI or DataONE portals) is likely to be just
-the labels for the annotation components, possibly with a link out to the value (using the URI itself) 
-to assist a reader's understanding of the concept. Later, repository displays could build popups, e.g, with
-concept definitions or other material from the source ontology.
-
+EML repository on GitHub
 

@@ -7,7 +7,7 @@ Databits 2019 Spring
 
 A semantic annotation is the attachment of semantic metadata to a resource. It provides precise 
 definitions of concepts and clarifies the relationships between concepts in a computer-usable way. The process of 
-creating semantic annotations may seem tedious, but the payoff is enhanced information retrieval and discovery. Semantic 
+creating semantic annotations may seem tedious, but the payoff is enhanced data retrieval and discovery. Semantic 
 annotations will make it easier for others to find and reuse your data. 
 
 For  example, if a dataset is annotated as being about "carbon dioxide flux" and another annotated with 
@@ -18,10 +18,11 @@ animals born at the same time, etc.). Yet another example is if you search for d
 then datasets about "carbon dioxide flux" can also be returned because "carbon dioxide flux" is 
 considered a type of "carbon flux". 
 
-EML 2.2 will have the capacity to add semantic statements, as annotations to datasets. 
+EML 2.2 will have the capacity to add semantic statements, as annotations to datasets 
+(EML Development Committee, 2019). 
 Here, we describe those features briefly and give examples of two common annotations - at the dataset-level
-and attribute-level. The EML development committee is creating a Semantic Primer, that will be released along with other
-EML 2.2 documentataion.
+and attribute-level. The EML development committee is creating a Semantic Primer 
+that will be released along with other EML 2.2 documentataion.
 
 
 # Semantic Triples
@@ -80,7 +81,9 @@ In **EML 2.2.0** there are 5 places where annotation elements can appear in an E
 
 ### Annotation element structure
 All annotation nodes are defined as an XML type, so they have the same structure anywhere they appear
-in the EML record. Here is the basic structure. Specific examples are below.
+in the EML record. Here is the basic structure. Specific examples are below. The annotation node
+holds the `predicate` and `object`; the `subject` of the semantic statement is the parent element of the 
+annotation.
 
 ```xml
     <annotation>
@@ -121,7 +124,7 @@ any of them can be annotated. This example is for a dataset. **A top-level annot
 to the entire resource (dataset)**.  The `annotation` element is 
 the last element of the resource group (i.e., it appears right after `coverage`). 
 
-- The *subject* of the semantic statement is the parent element of the annotation, the dataset. It must have an `id=" "` attribute. 
+- The *subject* of the semantic statement is the parent element of the annotation, the dataset. It must have an `id="` attribute. 
 - Each annotation consists of a `propertyURI` element and `valueURI` element, which define an *object property* and the *object* (value), respectively. 
 - `propertyURI` and `valueURI` elements  
   - must have a `label` attribute that is suitable for application interfaces. 
@@ -172,7 +175,7 @@ interpreting values for the attribute.
 
 A attribute annotation is an `annotation` element contained by an `attribute` element. 
 
-- The *subject* of the semantic statement is the parent element of the annotation, the dataset. It must have an `id=" "` attribute. 
+- The *subject* of the semantic statement is the parent element of the annotation, the `<attribute>`. The XML node must have an `id="`. 
 - Each annotation consists of a `propertyURI` element and `valueURI` element, which define an *object property* and the *object* (value), respectively. 
 - `propertyURI` and `valueURI` elements  
   - must have a `label` attribute that is suitable for application interfaces. 
@@ -201,6 +204,15 @@ Taken together, the semantic statement indicates that "the attribute with the id
     </annotation>
 </attribute>
 ```
+
+
+### RDF Graphs 
+Below is an example of how an annotation is converted to a graph of the RDF triple. 
+The parts of a triple (subject, predicate, and object)  bbecome nodes and links in a graph.
+
+![RDF graph A](RDF_graph.png "Graph from attribute annotation:")
+
+
 
 
 # Conclusion
@@ -232,5 +244,5 @@ learn more: https://www.w3.org/TR/rdf11-primer/).
 
 Ref for example spiderman https://www.w3.org/TR/turtle/
 
-EML repository on GitHub
+EML Development Committee. 2019 https://github.com/NCEAS/eml 
 

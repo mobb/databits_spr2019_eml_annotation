@@ -1,10 +1,9 @@
-Semantic Annotations in EML 2.2
+# Semantic Annotations in EML 2.2
 
-O’Brien, Chong, Schildhauer 
+## O’Brien, Chong, Schildhauer 
+## Databits 2019 Spring
 
-Databits 2019 Spring
-
-Introduction
+# Introduction
 A semantic annotation involves the attachment ("annotation") of semantic metadata to a resource -- which in this 
 context is an EML element. A semantic annotation provides a pointer to useful descriptions, definitions, or relationships 
 in a computer-usable way. The process of creating semantic annotations may seem tedious, but the payoff is vastly enhanced 
@@ -15,7 +14,7 @@ can be traversed by computer logic. Hence, semantic statements must be logically
 of loosely structured keywords. Inconsistent annotations create confusion, and so constructors should take care, and bring 
 up questions for feedback.
 
-Semantic Triples
+# Semantic Triples
 Semantic annotations enable the creation of what are called triples, or 3-part statements conforming to the W3C recommended 
 RDF data model (____REF___). The three parts of a triple are a subject, a predicate and an object. 
 
@@ -54,7 +53,7 @@ The “located in” relationship means that more precise searches can be constr
 dataset alongside other datasets that are "located in" a precisely defined area called a "desert" -- not just related 
 to deserts in some unknown way, which is all that is possible with keywords. 
 
-Semantic Annotations in EML
+# Semantic Annotations in EML
 
 Continuing with the JRN example, the annotation in EML looks like this 
 
@@ -64,7 +63,7 @@ Example 3 jrn dataset-level anntation
 
 
 
-EML Annotations to Semantic Triples
+# EML Annotations to Semantic Triples
 The subjects of triples generated from EML annotations will likely be HTTP URI's that identify the parent element of 
 the annotation, e.g, dataset resource itself or a specific data entity attributes. The objects of EML semantic annotations, 
 as well as the predicates that relate the subject to the object, will most typically be HTTP URI references to terms in 
@@ -75,12 +74,12 @@ terms.
 
 
 
-Section 4
+# Section 4
 Lorem ipsum
 
 
 
-References
+# References
 Lorem ipsum
 
 learn more: https://www.w3.org/TR/rdf11-primer/). 

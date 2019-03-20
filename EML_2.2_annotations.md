@@ -224,7 +224,6 @@ have dreadful consequences.
 So the primer will also have examples of how things can go wrong.
 
 Communities like LTER and EDI will need to make some decisions about what ontologies to adopt and support for their datasets, based on those vocabulary’s domain coverage, content complexity, technical structure. 
-
 The professional scope of our occupation continually grows and although this may add challenges, we should accept that idata manager or EML constructor will need to be able to 
 understand the concepts in the ontologies chosen by our communities, in addition to the concepts in the datasets we manage, and create logical annotations between the two. Concurrently, repository and other search-system managers will need mechanisms to interpret the implied subjects and create the RDF triples from EML annotations when needed. Repositories will need to provide mechanisms to take advantage of the structure of the ontologies chosen by their communities, and provide technical guidance to their communities as they choices ontologies and other vocabularies.
 

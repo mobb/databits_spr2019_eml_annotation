@@ -230,10 +230,11 @@ have dreadful consequences.
 So the primer will also have examples of how things can go wrong.
 
 The professional scope of our occupation will contine to grow, adding both challenges and opportunities.
-Communities like LTER and EDI will need to make decisions about what ontologies to adopt
-for their datasets, based on those vocabularies' domain coverage, content, complexity, 
+Communities like LTER and EDI will need to make decisions about what ontologies to adopt and priorities 
+for applying them to their datasets, based on many aspects including (but not limted to) 
+dataset importance, vocabularies' domain coverage, content, complexity, 
 longevity and maintenance plans, and technical structure. This should be a joint venture, between
-data managers (EML constructors), repositories and the designers or maintainers of ontologies and
+data managers (with scientific input), repositories and the designers or maintainers of ontologies and
 other vocabularies. 
 
 As data managers, we will need to be able to 

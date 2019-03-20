@@ -49,7 +49,8 @@ HTTP URIs (uniform resource identifiers), which are
 
 The simplest 
 triple statement is a sequence of (subject, predicate, object) terms, separated by whitespace and 
-terminated by '.' (W3C ref). Below is the sematic statement for the relationship between Spiderman and the 
+terminated by '.' (rud'hommeaux & Carothers, 2014). Below is the sematic statement for the relationship 
+between Spiderman and the 
 Green Goblin, with fictional URIs:
 
 ```
@@ -99,9 +100,9 @@ map to EML annotations using the JRN statement above.
 
 |Triple component|EML location |Note  |Example  |
 |--|--|--|--|
-| `subject` |Parent element of the annotation  |  An element meant to be a subject must have an `id` attribute | https://doi.org/10.6073/pasta/06db7b16fe62bcce4c43fd9ddbe43575 |
-| `predicate` | `//annotation/propoertyURI`  | the "verb" in a statement | http://purl.obolibrary.org/obo/RO_0001025  |
-| `object` | `//annotation/valueURI` | "object" of the "verb"  | http://purl.obolibrary.org/obo/ENVO_00000097 |
+| `subject` |Parent element of the annotation  |To be a subject, an element must have an `id` attribute | https://doi.org/10.6073/pasta/06db7b16fe62bcce4c43fd9ddbe43575 |
+| `predicate` | `//annotation/propoertyURI`  |the "verb" in a statement | http://purl.obolibrary.org/obo/RO_0001025  |
+| `object` | `//annotation/valueURI` |"object" of the "verb"  | http://purl.obolibrary.org/obo/ENVO_00000097 |
 
 **When are IDs required?**
 Annotations at the dataset, entity or attribute level presume that the parent element is the *subject*; hence, if an element has
@@ -239,10 +240,8 @@ so the primer will also will have examples of how things can go wrong, of course
 
 # References
 
-
-learn more: https://www.w3.org/TR/rdf11-primer/). 
-
-Ref for example spiderman https://www.w3.org/TR/turtle/
+Ref for example spiderman Prud'hommeaux E. and G.Carothers. 2014. W3C Recommendation: RDF 1.1 Turtle. 
+http://www.w3.org/TR/2014/REC-turtle-20140225
 
 EML Development Committee. 2019 https://github.com/NCEAS/eml 
 

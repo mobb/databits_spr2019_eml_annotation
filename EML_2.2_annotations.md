@@ -54,18 +54,18 @@ between Spiderman and the Green Goblin, with fictional URIs:
 ```
 
 Below is a true triple created for a Jornada LTER dataset. The URIs resolve, to say that a 
-dataset (subject) was "located in" (predicate/property) a "desert area" (object/value). The subject 
+dataset (subject) "is about" (predicate/property) a "desert area" (object/value). The subject 
 dereferences to a dataset in PASTA, knb-lter-jrn.210327001.1, the predicate to a relationship ontology 
-which defines the spatial concept "located in", 
+which defines the concept "is about", 
 and the object to a concept in the Environment Ontology, which contains a complex definition and 
 cross references for “desert area”. 
 
 ```
-<https://doi.org/10.6073/pasta/06db7b16fe62bcce4c43fd9ddbe43575> <http://purl.obolibrary.org/obo/RO_0001025> <http://purl.obolibrary.org/obo/ENVO_00000097> .
+<https://doi.org/10.6073/pasta/06db7b16fe62bcce4c43fd9ddbe43575> <http://purl.obolibrary.org/obo/IAO_0000136> <http://purl.obolibrary.org/obo/ENVO_00000097> .
 ```
 
-The “located in” relationship means that more precise searches can be constructed, e.g. a computer can 
-return this dataset alongside other datasets that are spatially "located in" a precisely defined area called a 
+The “is about” relationship means that more precise searches can be constructed, e.g. a computer can 
+return this dataset alongside other datasets that are "about" a precisely defined area called a 
 "desert" -- not just related to deserts in some unknown way, which is all that is possible with keywords. 
 
 ## Semantic Annotations in EML 2.2.0

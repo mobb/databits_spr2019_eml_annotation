@@ -21,22 +21,17 @@ considered a type of "carbon flux".
 EML 2.2 will have the capacity to add semantic statements, as annotations to datasets 
 (EML Development Committee, 2019). 
 Here, we describe those features briefly and give examples of two common annotations - at the dataset-level
-and attribute-level. The EML development committee is creating a Semantic Primer 
-that will be released along with other EML 2.2 documentation.
+and attribute-level. The EML development committee is developing a Semantic Primer with greater details about creating annotations in EML.  It will be released along with other EML 2.2 documentation.
 
 
 # Semantic Triples
 Semantic annotations enable the creation of "triples", which are 3-part statements composed of
-a **subject**, a **predicate** (sometimes called object property or data property), and an **object**.
+a **subject**, a **predicate** (that can be object properties or datatype properties), and an **object**.
 ```
 [subject] [predicate] [object]
 ```
-These components are analogous to parts of a sentence; the **subject** 
-and **object** can be thought of as nouns in the sentence and the **predicate** 
-is akin to a verb or relationship that connects the **subject** and **object**. 
-The semantic triple  expresses the statement about the associated resource. 
-After processing the EML into a semantic web format, 
-such as RDF/XML, the semantic statement becomes interpretable by machines. 
+These components are analogous to the parts of a sentence; the **subject** and **object** can be thought of as nouns in the sentence and the **predicate** is akin to a verb or relationship that connects the **subject** and **object**. 
+The semantic triple  expresses the statement about the associated resource. After processing the EML into a semantic web format, such as RDF/XML, the semantic statement becomes interpretable by machines. 
 
 RDF is *not* designed to be displayed to people. It is designed so that components are accessible 
 through the Web, for computers to look up precise definitions and relationships between these resources 
@@ -50,11 +45,9 @@ In addition to unique and non-ephemeral (URLs are considered ephemeral) the defi
 the URI should not change substantially, so that the resources referencing them may rely on their 
 annotations remaining consistent and truthful.
 
-The simplest 
-triple statement is a sequence of (subject, predicate, object) terms, separated by whitespace and 
+The simplest triple statement is a sequence of (subject, predicate, object) terms, separated by whitespace and 
 terminated by '.' (Prud'hommeaux & Carothers, 2014). Below is the semantic statement for the relationship 
-between Spiderman and the 
-Green Goblin, with fictional URIs:
+between Spiderman and the Green Goblin, with fictional URIs:
 
 ```
 <http://example.org/#spiderman> <http://example.org/#enemyOf> <http://example.org/#green-goblin> .
@@ -119,9 +112,6 @@ The EML-2.2 parser checks for an `id` attribute on the parent element if an anno
 label field (`rdfs:label`) or preferred label field (`skos:prefLabel`) from the referenced vocabulary.
 
 
-
-
-
 ### Resource level (top-level) annotations: `dataset`
 
 The top-level resources in EML are `dataset`, `literature`, `protocol`, and `software`, and
@@ -175,10 +165,9 @@ Taken together, the semantic statement can be translated to "the dataset is abou
 ## Attribute-level annotations: `attribute` 
 
 **An attribute annotation applies to the measurement or observation** in the data entity attribute, such as a column in a spreadsheet or table. 
-It associates precise measurement semantics such as the property or "thing" being measured, the measurement standard for 
-interpreting values for the attribute. The simplest annotation is a single reference to a complex measurement described in an ontology (as in this example).
+It associates precise measurement semantics such as the feature or "thing" being measured, and the measurement standard or property for interpreting values for the attribute. The simplest annotation is a single reference to a complex measurement described in an ontology (as in this example).
 
-A attribute annotation is an `annotation` element contained by an `attribute` element.  
+An attribute annotation is an `annotation` element contained by an `attribute` element.  
 
 - The *subject* of the semantic statement is the parent element of the annotation, the `<attribute>`. The XML node must have an `id="`. 
 - Each annotation consists of a `propertyURI` element and `valueURI` element, which define an *object property* and the *object* (value), respectively. 
@@ -221,12 +210,8 @@ The parts of a triple (subject, predicate, and object) become nodes and links in
 
 
 # Conclusion
-For complete documentation, see the EML Semantics Primer, which can be found with 
-other EML documentation. It contains several more 
-examples, and other RDF material for reference.
-It is important to keep in mind that **Semantic statements are not 
-simply a set of loosely structured keywords; they must be logically consistent**. Inconsistent annotations could 
-have dreadful consequences.
+For complete documentation, see the EML Semantics Primer, which can be found with other EML documentation. It contains several more examples, and other RDF material for reference.
+It is important to keep in mind that **Semantic statements are not simply a set of loosely structured keywords; they must be logically consistent**. Inconsistent annotations could have dreadful consequences.
 So the primer will also have examples of how things can go wrong.
 
 The professional scope of our occupation will continue to grow, adding both challenges and opportunities.
@@ -234,7 +219,7 @@ Communities like LTER and EDI will need to make decisions about what ontologies 
 for applying them to their datasets, based on many aspects including (but not limited to) 
 dataset importance, vocabularies' domain coverage, content, complexity, 
 longevity and maintenance plans, and technical structure. This should be a joint venture, between
-data managers (with scientific input), repositories and the designers or maintainers of ontologies and
+data managers (with scientific input), tories and the designers or maintainers of ontologies and
 other vocabularies. 
 
 As data managers, we will need to be able to 

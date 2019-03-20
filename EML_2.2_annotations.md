@@ -174,11 +174,11 @@ Taken together, the semantic statement can be translated to "the dataset is abou
 
 ## Attribute-level annotations: `attribute` 
 
-An attribute annotation applies to a data entity attribute, such as a column name in a spreadsheet or table. 
+**An attribute annotation applies to the measurement or observation** in the data entity attribute, such as a column in a spreadsheet or table. 
 It associates precise measurement semantics such as the property or "thing" being measured, the measurement standard for 
-interpreting values for the attribute. 
+interpreting values for the attribute. The simplest annotation is a single reference to a complex measurement described in an ontlogy (as in this example).
 
-A attribute annotation is an `annotation` element contained by an `attribute` element. 
+A attribute annotation is an `annotation` element contained by an `attribute` element.  
 
 - The *subject* of the semantic statement is the parent element of the annotation, the `<attribute>`. The XML node must have an `id="`. 
 - Each annotation consists of a `propertyURI` element and `valueURI` element, which define an *object property* and the *object* (value), respectively. 

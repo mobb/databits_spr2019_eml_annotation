@@ -1,5 +1,5 @@
 # Semantic Annotations in EML 2.2
-O’Brien, Chong, Schildhauer 
+Margaret O’Brien (EDI, SBC LTER), Steven Chong (NCEAS), Mark Schildhauer (NCEAS) 
 
 Databits 2019 Spring
 

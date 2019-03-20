@@ -22,7 +22,7 @@ EML 2.2 will have the capacity to add semantic statements, as annotations to dat
 (EML Development Committee, 2019). 
 Here, we describe those features briefly and give examples of two common annotations - at the dataset-level
 and attribute-level. The EML development committee is creating a Semantic Primer 
-that will be released along with other EML 2.2 documentataion.
+that will be released along with other EML 2.2 documentation.
 
 
 # Semantic Triples
@@ -40,7 +40,7 @@ such as RDF/XML, the semantic statement becomes interpretable by machines.
 
 RDF is *not* designed to be displayed to people. It is designed so that components are accessible 
 through the Web, for computers to look up precise definitions and relationships between these resources 
-and other concepts. To simplfy their use, the three components of a semantic triple should be 
+and other concepts. To simplify their use, the three components of a semantic triple should be 
 HTTP URIs (uniform resource identifiers), which are 
 
 - globally unique and persistent, and
@@ -52,7 +52,7 @@ annotations remaining consistent and truthful.
 
 The simplest 
 triple statement is a sequence of (subject, predicate, object) terms, separated by whitespace and 
-terminated by '.' (Prud'hommeaux & Carothers, 2014). Below is the sematic statement for the relationship 
+terminated by '.' (Prud'hommeaux & Carothers, 2014). Below is the semantic statement for the relationship 
 between Spiderman and the 
 Green Goblin, with fictional URIs:
 
@@ -104,7 +104,7 @@ The EML annotation is used to create semantic triples. The table below shows how
 |Triple component|EML location |Note  |Example  |
 |--|--|--|--|
 | `subject` |Parent element of the annotation (element just above it in the XML "tree") |To be a subject, an element must have an `id` attribute | https://doi.org/10.6073/pasta/06db7b16fe62bcce4c43fd9ddbe43575 |
-| `predicate` | `//annotation/propoertyURI`  |the "verb" in a statement | http://purl.obolibrary.org/obo/RO_0001025  |
+| `predicate` | `//annotation/propertyURI`  |the "verb" in a statement | http://purl.obolibrary.org/obo/RO_0001025  |
 | `object` | `//annotation/valueURI` |"object" of the "verb"  | http://purl.obolibrary.org/obo/ENVO_00000097 |
 
 **When are IDs required in the EML?**
@@ -116,7 +116,7 @@ references, an `id` is required.
 The EML-2.2 parser checks for an `id` attribute on the parent element if an annotation is present. 
 
 **Labels**: It is recommended that the label field of the annotation is populated by the value from the 
-preferred label field (`skos:prefLabel`) or label field (`rdfs:label`) from the referenced vocabulary.
+label field (`rdfs:label`) or preferred label field (`skos:prefLabel`) from the referenced vocabulary.
 
 
 
@@ -134,7 +134,7 @@ the last element of the resource group (i.e., it appears right after `coverage`)
 - `propertyURI` and `valueURI` elements  
   - must have a `label` attribute that is suitable for application interfaces. 
   - should have URIs that point to terms in controlled vocabularies
-- Labels should be populated from the preferred labels field (`skos:prefLabel`) or label field (`rdfs:label`) in the referenced vocabulary.
+- Labels should be populated from the label field (`rdfs:label`) or preferred labels field (`skos:prefLabel`) in the referenced vocabulary.
 
 In the following dataset annotation, 
 
@@ -176,7 +176,7 @@ Taken together, the semantic statement can be translated to "the dataset is abou
 
 **An attribute annotation applies to the measurement or observation** in the data entity attribute, such as a column in a spreadsheet or table. 
 It associates precise measurement semantics such as the property or "thing" being measured, the measurement standard for 
-interpreting values for the attribute. The simplest annotation is a single reference to a complex measurement described in an ontlogy (as in this example).
+interpreting values for the attribute. The simplest annotation is a single reference to a complex measurement described in an ontology (as in this example).
 
 A attribute annotation is an `annotation` element contained by an `attribute` element.  
 
@@ -185,7 +185,7 @@ A attribute annotation is an `annotation` element contained by an `attribute` el
 - `propertyURI` and `valueURI` elements  
   - must have a `label` attribute that is suitable for application interfaces. 
   - should have URIs that point to terms in controlled vocabularies
-- Labels should be populated from the preferred labels field (`skos:prefLabel`) or label field (`rdfs:label`) in the referenced vocabulary.
+- Labels should be populated from the label field (`rdfs:label`) or preferred labels field (`skos:prefLabel`) in the referenced vocabulary.
 
 In the following dataset annotation, 
 
@@ -213,7 +213,7 @@ Taken together, the semantic statement indicates that "the dataset-attribute wit
 
 ### RDF Graphs 
 Below is an example of how an annotation is converted to a graph of the RDF triple. 
-The parts of a triple (subject, predicate, and object)  bbecome nodes and links in a graph.
+The parts of a triple (subject, predicate, and object) become nodes and links in a graph.
 
 ![RDF graph A](RDF_graph.png "Graph from attribute annotation:")
 
@@ -229,9 +229,9 @@ simply a set of loosely structured keywords; they must be logically consistent**
 have dreadful consequences.
 So the primer will also have examples of how things can go wrong.
 
-The professional scope of our occupation will contine to grow, adding both challenges and opportunities.
+The professional scope of our occupation will continue to grow, adding both challenges and opportunities.
 Communities like LTER and EDI will need to make decisions about what ontologies to adopt and priorities 
-for applying them to their datasets, based on many aspects including (but not limted to) 
+for applying them to their datasets, based on many aspects including (but not limited to) 
 dataset importance, vocabularies' domain coverage, content, complexity, 
 longevity and maintenance plans, and technical structure. This should be a joint venture, between
 data managers (with scientific input), repositories and the designers or maintainers of ontologies and

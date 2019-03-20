@@ -108,7 +108,7 @@ map to EML annotations using the JRN statement above.
 Annotations at the dataset, entity or attribute level presume that the parent element is the *subject*; hence, if an element has
 an annotation child, an id is required. Annotations at `eml/annotations` or `eml/additionalMetadata` will have 
 subjects defined with a `references` attribute or `describes` element, so as for other internal EML 
-reference an `id` is required.
+references, an `id` is required.
 The EML-2.2 parser checks for an `id` attribute if an annotation is present. 
 
 **Labels**: It is recommended that the label field of the annotation is populated by the value from the preferred label field 

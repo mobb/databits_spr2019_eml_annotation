@@ -231,7 +231,7 @@ understand the concepts in the ontologies chosen by our communities, in addition
 # References
 
 Prud'hommeaux E. and G. Carothers. 2014. W3C Recommendation: RDF 1.1 Turtle. 
-http://www.w3.org/TR/2014/REC-turtle-20140225
+http://www.w3.org/TR/2014/REC-turtle-20140225 (accessed 2019-03-15)
 
-EML Development Committee. 2019 https://github.com/NCEAS/eml 
+EML Development Committee. 2019 https://github.com/NCEAS/eml (accessed 2019-03-15)
 

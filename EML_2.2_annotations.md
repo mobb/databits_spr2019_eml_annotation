@@ -100,7 +100,7 @@ map to EML annotations using the JRN statement above.
 
 |Triple component|EML location |Note  |Example  |
 |--|--|--|--|
-| `subject` |Parent element of the annotation  |To be a subject, an element must have an `id` attribute | https://doi.org/10.6073/pasta/06db7b16fe62bcce4c43fd9ddbe43575 |
+| `subject` |Parent element of the annotation (element just above it in the XML "tree" |To be a subject, an element must have an `id` attribute | https://doi.org/10.6073/pasta/06db7b16fe62bcce4c43fd9ddbe43575 |
 | `predicate` | `//annotation/propoertyURI`  |the "verb" in a statement | http://purl.obolibrary.org/obo/RO_0001025  |
 | `object` | `//annotation/valueURI` |"object" of the "verb"  | http://purl.obolibrary.org/obo/ENVO_00000097 |
 

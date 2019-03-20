@@ -217,25 +217,16 @@ The parts of a triple (subject, predicate, and object)  bbecome nodes and links 
 
 
 # Conclusion
-Remind them about the primer again. that it will have way more examples
-also will be some RDF material for reference if you are interested.
+For complete documentation, see the EML Semantics Primer, with other EML documentation. It will have several more 
+examples, and other RDF material for reference.  It is important to keep in mind that **Semantic statements are not 
+simply a set of loosely structured keywords; they must be logically consistent**. Inconsistent annotations could 
+have dreadful consequences.
+So the primer will also have examples of how things can go wrong.
 
-It is important to keep in mind that **Semantic statements are not simply a set of loosely structured keywords; 
-they must be logically consistent**. Inconsistent annotations could have dreadful consequences. 
-so the primer will also will have examples of how things can go wrong, of course hoping not to scare anyone. 
+Communities like LTER and EDI will need to make some decisions about what ontologies to adopt and support for their datasets, based on those vocabulary’s domain coverage, content complexity, technical structure. 
 
- something about 
- **Responsibilities of a data manager/EML constructor** to 
- understand the concepts in the ontologies chosen by your community,
- understand the concepts in the datasets you manage
-
- vs **Responsibilities of a repository (or another search-systems)**
- to understand the implied subject and create the RDF triples when needed.
- provide mechanisms to take advantage of structures in the onts chosen by their communities, 
- provide technical guidance to their communities as they choices onts and other vocabs.
-
-
-
+The professional scope of our occupation continually grows and although this may add challenges, we should accept that idata manager or EML constructor will need to be able to 
+understand the concepts in the ontologies chosen by our communities, in addition to the concepts in the datasets we manage, and create logical annotations between the two. Concurrently, repository and other search-system managers will need mechanisms to interpret the implied subjects and create the RDF triples from EML annotations when needed. Repositories will need to provide mechanisms to take advantage of the structure of the ontologies chosen by their communities, and provide technical guidance to their communities as they choices ontologies and other vocabularies.
 
 
 # References

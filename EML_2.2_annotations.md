@@ -112,7 +112,7 @@ The EML-2.2 parser checks for an `id` attribute on the parent element if an anno
 label field (`rdfs:label`) or preferred label field (`skos:prefLabel`) from the referenced vocabulary.
 
 
-### Resource level (top-level) annotations: `dataset`
+### Example 1 - Resource level (top-level) annotations: `dataset`
 
 The top-level resources in EML are `dataset`, `literature`, `protocol`, and `software`, and
 any of them can be annotated. This example is for a dataset. **A top-level annotation applies 
@@ -128,7 +128,7 @@ the last element of the resource group (i.e., it appears right after `coverage`)
 
 In the following dataset annotation, 
 
-- the *subject* of the semantic statement is the parent element `dataset id="dataset-01"` (which in the resulting triple would use the global ID for the dataset, its DOI)
+- the *subject* of the semantic statement is the parent element `dataset id="dataset-01"` (which in the resulting triple would use the  resolvable HTTP URI for the global ID for the dataset, that includes its DOI)
 - the *object property* is "http://purl.obolibrary.org/obo/IAO_0000136"
 - the *object* (value)  is "http://purl.obolibrary.org/obo/ENVO_01000177"
 
@@ -162,7 +162,7 @@ Taken together, the semantic statement can be translated to "the dataset is abou
 
 
 
-## Attribute-level annotations: `attribute` 
+## Example 2 - Attribute-level annotations: `attribute` 
 
 **An attribute annotation applies to the measurement or observation** in the data entity attribute, such as a column in a spreadsheet or table. 
 It associates precise measurement semantics such as the feature or "thing" being measured, and the measurement standard or property for interpreting values for the attribute. The simplest annotation is a single reference to a complex measurement described in an ontology (as in this example).
@@ -218,8 +218,8 @@ The professional scope of our occupation will continue to grow, adding both chal
 Communities like LTER and EDI will need to make decisions about what ontologies to adopt and priorities 
 for applying them to their datasets, based on many aspects including (but not limited to) 
 dataset importance, vocabularies' domain coverage, content, complexity, 
-longevity and maintenance plans, and technical structure. This should be a joint venture, between
-data managers (with scientific input), tories and the designers or maintainers of ontologies and
+longevity and maintenance plans, plus their technical structure. This should be a joint venture, between
+data managers (with scientific input), repositories, and the designers or maintainers of ontologies and
 other vocabularies. 
 
 As data managers, we will need to be able to 

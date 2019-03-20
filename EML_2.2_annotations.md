@@ -240,7 +240,7 @@ so the primer will also will have examples of how things can go wrong, of course
 
 # References
 
-Ref for example spiderman Prud'hommeaux E. and G.Carothers. 2014. W3C Recommendation: RDF 1.1 Turtle. 
+Prud'hommeaux E. and G. Carothers. 2014. W3C Recommendation: RDF 1.1 Turtle. 
 http://www.w3.org/TR/2014/REC-turtle-20140225
 
 EML Development Committee. 2019 https://github.com/NCEAS/eml 

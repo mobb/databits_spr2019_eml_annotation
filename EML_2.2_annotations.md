@@ -27,7 +27,7 @@ that will be released along with other EML 2.2 documentataion.
 
 # Semantic Triples
 Semantic annotations enable the creation of "triples", which are 3-part statements composed of
-a **subject**, an **predicate** (sometimes called object property or data property), and an **object**.
+a **subject**, a **predicate** (sometimes called object property or data property), and an **object**.
 ```
 [subject] [predicate] [object]
 ```
@@ -43,13 +43,16 @@ through the Web, for computers to look up precise definitions and relationships 
 and other concepts. To simplfy their use, the three components of a semantic triple should be 
 HTTP URIs (uniform resource identifiers), which are 
 
-- globally unique and persistent (unchanging), and
+- globally unique and persistent, and
 - resolvable or dereferenceable
 
+In addition to unique and non-ephemeral (URLs are considered ephemeral) the definition referenced by 
+the URI should not change substantially, so that the resources referencing them may rely on their 
+annotations remaining consistent and truthful.
 
 The simplest 
 triple statement is a sequence of (subject, predicate, object) terms, separated by whitespace and 
-terminated by '.' (rud'hommeaux & Carothers, 2014). Below is the sematic statement for the relationship 
+terminated by '.' (Prud'hommeaux & Carothers, 2014). Below is the sematic statement for the relationship 
 between Spiderman and the 
 Green Goblin, with fictional URIs:
 
@@ -59,7 +62,8 @@ Green Goblin, with fictional URIs:
 
 Below is a true triple created for a Jornada LTER dataset. The URIs resolve, to say that a 
 dataset (subject) was "located in" (predicate/property) a "desert area" (object/value). The subject 
-dereferences to a dataset in PASTA, knb-lter-jrn.210327001.1, the predicate to a relationship ontology, 
+dereferences to a dataset in PASTA, knb-lter-jrn.210327001.1, the predicate to a relationship ontology 
+which defines the spatial concept "located in", 
 and the object to a concept in the Environment Ontology, which contains a complex definition and 
 cross references for “desert area”. 
 
@@ -68,7 +72,7 @@ cross references for “desert area”.
 ```
 
 The “located in” relationship means that more precise searches can be constructed, e.g. a computer can 
-return this dataset alongside other datasets that are "located in" a precisely defined area called a 
+return this dataset alongside other datasets that are spatially "located in" a precisely defined area called a 
 "desert" -- not just related to deserts in some unknown way, which is all that is possible with keywords. 
 
 ## Semantic Annotations in EML 2.2.0
@@ -94,9 +98,8 @@ annotation.
 ```
 
 #### Annotations map to semantic triples
-The EML annotation is used to create semantic triples. The tables shows how the triple components 
-`subject`, `predicate`, and `object`
-map to EML annotations using the JRN statement above. 
+The EML annotation is used to create semantic triples. The table below shows how the triple components 
+`subject`, `predicate`, and `object` map to EML annotations using the JRN statement above. 
 
 |Triple component|EML location |Note  |Example  |
 |--|--|--|--|
@@ -104,15 +107,16 @@ map to EML annotations using the JRN statement above.
 | `predicate` | `//annotation/propoertyURI`  |the "verb" in a statement | http://purl.obolibrary.org/obo/RO_0001025  |
 | `object` | `//annotation/valueURI` |"object" of the "verb"  | http://purl.obolibrary.org/obo/ENVO_00000097 |
 
-**When are IDs required?**
-Annotations at the dataset, entity or attribute level presume that the parent element is the *subject*; hence, if an element has
-an annotation child, an id is required. Annotations at `eml/annotations` or `eml/additionalMetadata` will have 
+**When are IDs required in the EML?**
+Annotations at the dataset, entity or attribute level presume that the parent element is the *subject*; hence, 
+if an element has an annotation child, an id is required, so that the element can become the subject of the triple.
+Annotations using `eml/annotations` or `eml/additionalMetadata` will have 
 subjects defined with a `references` attribute or `describes` element, so as for other internal EML 
 references, an `id` is required.
 The EML-2.2 parser checks for an `id` attribute on the parent element if an annotation is present. 
 
-**Labels**: It is recommended that the label field of the annotation is populated by the value from the preferred label field 
-(`skos:prefLabel`) or label field (`rdfs:label`) from the referenced vocabulary.
+**Labels**: It is recommended that the label field of the annotation is populated by the value from the 
+preferred label field (`skos:prefLabel`) or label field (`rdfs:label`) from the referenced vocabulary.
 
 
 
@@ -132,13 +136,13 @@ the last element of the resource group (i.e., it appears right after `coverage`)
   - should have URIs that point to terms in controlled vocabularies
 - Labels should be populated from the preferred labels field (`skos:prefLabel`) or label field (`rdfs:label`) in the referenced vocabulary.
 
-In the following dataset annotation (Example 1), 
+In the following dataset annotation, 
 
-- the *subject* of the semantic statement is the parent element `dataset id="dataset-01"` 
-- the *object property* is "http://purl.org/dc/elements/1.1/subject"
+- the *subject* of the semantic statement is the parent element `dataset id="dataset-01"` (which in the resulting triple would use the global ID for the dataset, its DOI)
+- the *object property* is "http://purl.obolibrary.org/obo/IAO_0000136"
 - the *object* (value)  is "http://purl.obolibrary.org/obo/ENVO_01000177"
 
-Taken together, the semantic statement can be translated to "the dataset is about the subject grassland biome"
+Taken together, the semantic statement can be translated to "the dataset is about a grassland biome"
 
 * Example 1: Top-level resource annotation (dataset)
 
@@ -159,7 +163,7 @@ Taken together, the semantic statement can be translated to "the dataset is abou
         ...
     </coverage>    
     <annotation>
-        <propertyURI label="Subject">http://purl.org/dc/elements/1.1/subject</propertyURI>
+        <propertyURI label="is about">http://purl.obolibrary.org/obo/IAO_0000136</propertyURI>
         <valueURI label="grassland biome">http://purl.obolibrary.org/obo/ENVO_01000177</valueURI>
     </annotation>
       ...    
@@ -185,12 +189,12 @@ A attribute annotation is an `annotation` element contained by an `attribute` el
 
 In the following dataset annotation, 
 
-- the *subject* of the semantic statement is the parent element `attribute id="att.4"` 
+- the *subject* of the semantic statement is the parent element `attribute id="att.4"` (which in the resulting triple would be a fragment of the URI)
 - the *object property* is "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#containsMeasurementsOfType"
 - the *object* (value)  is "http://purl.dataone.org/odo/ECSO_00001197" which resolves to the "Plant Cover Percentage" term in the ECSO Ontology (https://github.com/DataONEorg/sem-prov-ontologies/tree/master/observation). 
 
 
-Taken together, the semantic statement indicates that "the attribute with the id 'att.4' contains measurements of type plant cover percentage".
+Taken together, the semantic statement indicates that "the dataset-attribute with the id 'att.4' contains measurements of type plant cover percentage".
 
 * Example 2: attribute annotation
 
@@ -217,15 +221,28 @@ The parts of a triple (subject, predicate, and object)  bbecome nodes and links 
 
 
 # Conclusion
-For complete documentation, see the EML Semantics Primer, with other EML documentation. It will have several more 
-examples, and other RDF material for reference.  It is important to keep in mind that **Semantic statements are not 
+For complete documentation, see the EML Semantics Primer, which can be found with 
+other EML documentation. It contains several more 
+examples, and other RDF material for reference.  
+It is important to keep in mind that **Semantic statements are not 
 simply a set of loosely structured keywords; they must be logically consistent**. Inconsistent annotations could 
 have dreadful consequences.
 So the primer will also have examples of how things can go wrong.
 
-Communities like LTER and EDI will need to make some decisions about what ontologies to adopt and support for their datasets, based on those vocabulary’s domain coverage, content complexity, technical structure. 
-The professional scope of our occupation continually grows and although this may add challenges, we should accept that idata manager or EML constructor will need to be able to 
-understand the concepts in the ontologies chosen by our communities, in addition to the concepts in the datasets we manage, and create logical annotations between the two. Concurrently, repository and other search-system managers will need mechanisms to interpret the implied subjects and create the RDF triples from EML annotations when needed. Repositories will need to provide mechanisms to take advantage of the structure of the ontologies chosen by their communities, and provide technical guidance to their communities as they choices ontologies and other vocabularies.
+The professional scope of our occupation will contine to grow, adding both challenges and opportunities.
+Communities like LTER and EDI will need to make decisions about what ontologies to adopt   
+for their datasets, based on those vocabularies' domain coverage, content, complexity, 
+longevity and maintenance plans, and technical structure. This should be a joint venture, between
+data managers (EML constructors), repositories and the designers or maintainers of ontologies and
+other vocabularies. 
+
+As data managers, we will need to be able to 
+understand the concepts in the ontologies chosen by our communities, in addition to the concepts 
+in the datasets we manage, and to create logical annotations between the two. Concurrently, 
+repository and other search-system managers will need mechanisms to interpret the implied 
+subjects and create the RDF triples from EML annotations when needed. Repositories will need 
+to provide mechanisms to navigate the structure of the ontologies chosen by their communities, 
+and provide technical guidance to their communities as they choose ontologies and other vocabularies.
 
 
 # References

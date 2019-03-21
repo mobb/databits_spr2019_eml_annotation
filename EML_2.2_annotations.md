@@ -6,7 +6,7 @@ Databits 2019 Spring
 # Introduction
 
 A semantic annotation is the attachment of semantic metadata to a resource. It provides precise 
-definitions of concepts and clarifies the relationships between concepts in a computer-usable way. The process of 
+definitions of concepts and clarifies the relationships between concepts in a machine-readable way. The process of 
 creating semantic annotations may seem tedious, but the payoff is enhanced data retrieval and discovery. Semantic 
 annotations will make it easier for others to find and reuse your data. 
 
@@ -18,7 +18,7 @@ animals born at the same time, etc.). Yet another example is if you search for d
 then datasets about "carbon dioxide flux" can also be returned because "carbon dioxide flux" is 
 considered a type of "carbon flux". 
 
-EML 2.2 will have the capacity to add semantic statements, as annotations to datasets 
+EML 2.2 will have the capacity to add semantic statements as annotations to datasets 
 (EML Development Committee, 2019). 
 Here, we describe those features briefly and give examples of two common annotations - at the dataset-level
 and attribute-level. The EML development committee is developing a Semantic Primer with greater details about creating annotations in EML.  It will be released along with other EML 2.2 documentation.

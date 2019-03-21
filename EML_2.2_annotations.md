@@ -210,7 +210,8 @@ The parts of a triple (subject, predicate, and object) become nodes and links in
 
 
 # Conclusion
-For complete documentation, see the EML Semantics Primer, which can be found with other EML documentation. It contains several more examples, and other RDF material for reference.
+For complete documentation, see the EML Semantics Primer, which can be found with the soon-to-be-released 
+EML 2.2 documentation. It contains several more examples, and other RDF material for reference.
 It is important to keep in mind that **Semantic statements are not simply a set of loosely structured keywords; they must be logically consistent**. Inconsistent annotations could have dreadful consequences.
 So the primer will also have examples of how things can go wrong.
 

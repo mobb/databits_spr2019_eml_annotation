@@ -34,7 +34,7 @@ These components are analogous to the parts of a sentence; the **subject** and *
 The semantic triple  expresses the statement about the associated resource. After processing the EML into a semantic web format, such as RDF/XML, the semantic statement becomes interpretable by machines. 
 
 RDF is *not* designed to be displayed to people. It is designed so that components are accessible 
-through the Web, for computers to look up precise definitions and relationships between these resources 
+through the Web, for applications to look up precise definitions and relationships between these resources 
 and other concepts. To simplify their use, the three components of a semantic triple should be 
 HTTP URIs (uniform resource identifiers), which are 
 
